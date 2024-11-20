@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allergifind</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+  </style>
+  <script src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
+</head>`
+<body>
+  <!-- App Header -->
+  <header>
+    <h1>Allergifind</h1>
+    <p>Scan products to check ingredients and allergens</p>
+  </header>
+
+
+
+  <!-- Scan Button -->
+<div class="camera-container">
+  <video id="camera-stream" autoplay playsinline></video>
+  <canvas id="camera-canvas" style="display: none;"></canvas>
+  <div class="camera-buttons">
+    <button id="click-picture" class="circle-button">
+      <i class="fa fa-camera"></i>
+    </button>
+  </div>
+</div>
+
+
+  <!-- Product Details Section -->
+  <section id="product-details" class="hidden">
+    <div id="product-info">
+      <h2 id="product-name">Product Name</h2>
+    </div>  
+    <!-- Allergen Warning at top -->
+    <div class="card alert">
+      <div class="alert-header">
+        <i class="fa fa-exclamation-circle"></i>
+        <h3>Allergen Warning</h3>
+      </div>
+      <p id="allergen-warning">Contains: </p>
+    </div>
+
+    <!-- Ingredients Section -->
+    <div class="card" id="ingredients-card">
+      <div class="card-header" onclick="toggleSection('ingredients')">
+        <h3>Ingredients</h3>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <div class="card-content" id="ingredients-content">
+        <table id="ingredients-list" class="info-table"></table>
+      </div>
+    </div>
+
+    <!-- Nutritional Info Section -->
+    <div class="card" id="nutrition-card">
+      <div class="card-header" onclick="toggleSection('nutrition')">
+        <h3>Nutritional Info</h3>
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <div class="card-content" id="nutrition-content">
+        <table id="nutrition-list" class="info-table"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Navbar -->
+  <nav class="bottom-nav">
+    <button class="nav-button active">
+      <i class="fa fa-home"></i>
+      <span>Home</span>
+    </button>
+    <button class="nav-button">
+      <i class="fa fa-info-circle"></i>
+      <span>About</span>
+    </button>
+    <button class="nav-button" onclick="window.location.href='profile/index.html'">
+      <i class="fa fa-user"></i>
+      <span>Profile</span>
+    </button>
+  </nav>
+  
+  
+</body>
+</html>
